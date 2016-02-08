@@ -40,6 +40,12 @@
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
                    android:layout_gravity="center" android:contentDescription="@string/weather_icon_name"/>
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:layout_gravity="center"
+                android:id="@+id/not_updated" android:fontFamily="sans-serif-bold" android:textSize="20dp"/>
         <TextView android:id="@+id/weather_text"
                   android:layout_width="wrap_content"
                   android:layout_height="wrap_content"
@@ -52,11 +58,13 @@
             <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center"
                     android:text="High"
                     android:id="@+id/high_temperature"/>
             <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center"
                     android:text="Low"
                     android:id="@+id/low_temperature"/>
         </LinearLayout>
