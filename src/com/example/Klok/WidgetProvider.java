@@ -64,6 +64,19 @@ public class WidgetProvider extends AppWidgetProvider {
                     break;
                 case "Showers":
                     remoteViews.setImageViewResource(R.id.weather_icon, R.drawable.showers);
+                    break;
+                case "Mostly Cloudy":
+                    remoteViews.setImageViewResource(R.id.weather_icon, R.drawable.mostly_cloudy);
+                    break;
+                case "Partly Cloudy":
+                    remoteViews.setImageViewResource(R.id.weather_icon, R.drawable.partly_cloudy);
+                    break;
+                case "Light Rain":
+                    remoteViews.setImageViewResource(R.id.weather_icon, R.drawable.light_rain);
+                    break;
+                case "Cloudy":
+                    remoteViews.setImageViewResource(R.id.weather_icon, R.drawable.cloudy);
+                    break;
             }
             hasWeather = true;
         } catch (Exception e) {
