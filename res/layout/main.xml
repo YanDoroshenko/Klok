@@ -5,9 +5,15 @@
               android:layout_height="fill_parent"
               android:gravity="center_horizontal">
     <TextView android:id="@+id/main_text"
-            android:layout_width="fill_parent"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:text="@string/main_text"
+              android:gravity="center_horizontal"/>
+    <Button android:id="@+id/weather_switch"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/main_text"
-            android:gravity="center_horizontal"/>
+            android:text="@string/weather_off"
+            android:layout_gravity="center_horizontal"/>
 </LinearLayout>
 

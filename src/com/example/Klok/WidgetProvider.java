@@ -45,51 +45,16 @@ public class WidgetProvider extends AppWidgetProvider {
         Settings.System.getString(context.getContentResolver(),
                 Settings.System.NEXT_ALARM_FORMATTED);
 
-        /*Getting weather*/
-        try {
-            StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-            StrictMode.setThreadPolicy(policy);
-            Connection connection = Jsoup.connect("https://weather.yahoo.com");
-            Document document = connection.get();
-            String current_temperature = " " + document.getElementsByClass("num").get(1).text() + "°";
-            String high_temperature = " " + document.getElementsByClass("hi").get(1).text();
-            String low_temperature = " " + document.getElementsByClass("lo").get(1).text();
-            String condition = document.getElementsByClass("cond").first().text();
-            remoteViews.setTextViewText(R.id.weather_text, current_temperature);
-            remoteViews.setTextViewText(R.id.high_temperature, high_temperature);
-            remoteViews.setTextViewText(R.id.low_temperature, low_temperature);
-            switch (condition) {
-                case "Mostly Clear":
-                    remoteViews.setImageViewResource(R.id.weather_icon, R.drawable.mostly_clear);
-                    break;
-                case "Showers":
-                    remoteViews.setImageViewResource(R.id.weather_icon, R.drawable.showers);
-                    break;
-                case "Mostly Cloudy":
-                    remoteViews.setImageViewResource(R.id.weather_icon, R.drawable.mostly_cloudy);
-                    break;
-                case "Partly Cloudy":
-                    remoteViews.setImageViewResource(R.id.weather_icon, R.drawable.partly_cloudy);
-                    break;
-                case "Light Rain":
-                    remoteViews.setImageViewResource(R.id.weather_icon, R.drawable.light_rain);
-                    break;
-                case "Cloudy":
-                    remoteViews.setImageViewResource(R.id.weather_icon, R.drawable.cloudy);
-                    break;
-            }
-            hasWeather = true;
-        } catch (Exception e) {
-            noUpdateFor = new Date();
-        }
-        if (noUpdateFor != null)
-            if (new Date().getTime() - noUpdateFor.getTime() > 10800000) {
-                remoteViews.setTextColor(R.id.not_updated, Color.RED);
-                remoteViews.setTextViewText(R.id.not_updated, "!");
-            }
 
-        /*Drawing battery*/
+
         if (!hasWeather) {
+            /*Not showing weather*/
+            remoteViews.setTextViewText(R.id.weather_text, "");
+            remoteViews.setTextViewText(R.id.high_temperature, "");
+            remoteViews.setTextViewText(R.id.low_temperature, "");
+            remoteViews.setImageViewResource(R.id.weather_icon, 0);
+            remoteViews.setTextViewText(R.id.not_updated, "");
+            /*Drawing battery*/
             if (batteryPct < 20)
                 remoteViews.setImageViewResource(R.id.battery_icon, R.drawable.battery00);
             else if (batteryPct >= 20 && batteryPct < 40)
@@ -113,6 +78,53 @@ public class WidgetProvider extends AppWidgetProvider {
                 remoteViews.setTextViewText(R.id.alarm_text, "");
             }
         } else {
+
+            /*Getting and drawing weather*/
+            try {
+                StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+                StrictMode.setThreadPolicy(policy);
+                Connection connection = Jsoup.connect("https://weather.yahoo.com");
+                Document document = connection.get();
+                String current_temperature = " " + document.getElementsByClass("num").get(1).text() + "°";
+                String high_temperature = " " + document.getElementsByClass("hi").get(1).text();
+                String low_temperature = " " + document.getElementsByClass("lo").get(1).text();
+                String condition = document.getElementsByClass("cond").first().text();
+                remoteViews.setTextViewText(R.id.weather_text, current_temperature);
+                remoteViews.setTextViewText(R.id.high_temperature, high_temperature);
+                remoteViews.setTextViewText(R.id.low_temperature, low_temperature);
+                switch (condition) {
+                    case "Mostly Clear":
+                        remoteViews.setImageViewResource(R.id.weather_icon, R.drawable.mostly_clear);
+                        break;
+                    case "Showers":
+                        remoteViews.setImageViewResource(R.id.weather_icon, R.drawable.showers);
+                        break;
+                    case "Mostly Cloudy":
+                        remoteViews.setImageViewResource(R.id.weather_icon, R.drawable.mostly_cloudy);
+                        break;
+                    case "Partly Cloudy":
+                        remoteViews.setImageViewResource(R.id.weather_icon, R.drawable.partly_cloudy);
+                        break;
+                    case "Light Rain":
+                        remoteViews.setImageViewResource(R.id.weather_icon, R.drawable.light_rain);
+                        break;
+                    case "Cloudy":
+                        remoteViews.setImageViewResource(R.id.weather_icon, R.drawable.cloudy);
+                        break;
+                    case "Mostly Sunny":
+                        remoteViews.setImageViewResource(R.id.weather_icon, R.drawable.mostly_sunny);
+                        break;
+                }
+            } catch (Exception e) {
+                noUpdateFor = new Date();
+            }
+            if (noUpdateFor != null)
+                if (new Date().getTime() - noUpdateFor.getTime() > 10800000) {
+                    remoteViews.setTextColor(R.id.not_updated, Color.RED);
+                    remoteViews.setTextViewText(R.id.not_updated, "!");
+                }
+
+            /*Drawing battery*/
             if (batteryPct < 20)
                 remoteViews.setImageViewResource(R.id.battery_icon, R.drawable.battery00_small);
             else if (batteryPct >= 20 && batteryPct < 40)
@@ -146,5 +158,13 @@ public class WidgetProvider extends AppWidgetProvider {
         remoteViews.setOnClickPendingIntent(R.id.battery_text, pendingIntent);
 
         appWidgetManager.updateAppWidget(appWidgetIds[0], remoteViews);
+    }
+
+    public static boolean isHasWeather() {
+        return hasWeather;
+    }
+
+    public static void setHasWeather(boolean hasWeather) {
+        WidgetProvider.hasWeather = hasWeather;
     }
 }
