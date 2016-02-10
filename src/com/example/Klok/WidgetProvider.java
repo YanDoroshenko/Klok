@@ -91,6 +91,7 @@ public class WidgetProvider extends AppWidgetProvider {
                 remoteViews.setTextViewText(R.id.weather_text, current_temperature);
                 remoteViews.setTextViewText(R.id.high_temperature, high_temperature);
                 remoteViews.setTextViewText(R.id.low_temperature, low_temperature);
+                remoteViews.setTextViewText(R.id.not_updated, "");
                 noUpdateFor = null;
                 switch (condition) {
                     case "Mostly Clear":
