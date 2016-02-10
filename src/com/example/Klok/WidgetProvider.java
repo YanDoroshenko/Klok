@@ -46,7 +46,6 @@ public class WidgetProvider extends AppWidgetProvider {
                 Settings.System.NEXT_ALARM_FORMATTED);
 
 
-
         if (!hasWeather) {
             /*Not showing weather*/
             remoteViews.setTextViewText(R.id.weather_text, "");
@@ -92,6 +91,7 @@ public class WidgetProvider extends AppWidgetProvider {
                 remoteViews.setTextViewText(R.id.weather_text, current_temperature);
                 remoteViews.setTextViewText(R.id.high_temperature, high_temperature);
                 remoteViews.setTextViewText(R.id.low_temperature, low_temperature);
+                noUpdateFor = null;
                 switch (condition) {
                     case "Mostly Clear":
                         remoteViews.setImageViewResource(R.id.weather_icon, R.drawable.mostly_clear);
@@ -116,7 +116,8 @@ public class WidgetProvider extends AppWidgetProvider {
                         break;
                 }
             } catch (Exception e) {
-                noUpdateFor = new Date();
+                if (noUpdateFor == null)
+                    noUpdateFor = new Date();
             }
             if (noUpdateFor != null)
                 if (new Date().getTime() - noUpdateFor.getTime() > 10800000) {
