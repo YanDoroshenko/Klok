@@ -23,7 +23,15 @@ import java.util.Date;
  */
 public class WidgetProvider extends AppWidgetProvider {
     private static boolean hasWeather = true;
-    private static Date lastUpdateAt = new Date();
+    private static Date lastUpdateAt = null;
+
+    public static boolean isHasWeather() {
+        return hasWeather;
+    }
+
+    public static void setHasWeather(boolean hasWeather) {
+        WidgetProvider.hasWeather = hasWeather;
+    }
 
     @Override
     public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
@@ -44,7 +52,6 @@ public class WidgetProvider extends AppWidgetProvider {
         boolean hasAlarm = nextAlarm.length() > 1;
         Settings.System.getString(context.getContentResolver(),
                 Settings.System.NEXT_ALARM_FORMATTED);
-
 
         if (!hasWeather) {
             /*Not showing weather*/
@@ -79,16 +86,18 @@ public class WidgetProvider extends AppWidgetProvider {
         } else {
 
             /*Getting and drawing weather*/
+
             try {
                 StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
                 StrictMode.setThreadPolicy(policy);
                 Connection connection = Jsoup.connect("https://weather.yahoo.com");
                 Document document = connection.get();
-                lastUpdateAt = new Date();
                 String current_temperature = " " + document.getElementsByClass("num").get(1).text() + "°";
                 String high_temperature = " " + document.getElementsByClass("hi").get(1).text();
                 String low_temperature = " " + document.getElementsByClass("lo").get(1).text();
                 String condition = document.getElementsByClass("cond").first().text();
+                remoteViews.setTextViewTextSize(R.id.weather_text, 1, 25.0f);
+                remoteViews.setTextColor(R.id.weather_text, Color.LTGRAY);
                 remoteViews.setTextViewText(R.id.weather_text, current_temperature);
                 remoteViews.setTextViewText(R.id.high_temperature, high_temperature);
                 remoteViews.setTextViewText(R.id.low_temperature, low_temperature);
@@ -115,9 +124,15 @@ public class WidgetProvider extends AppWidgetProvider {
                     case "Mostly Sunny":
                         remoteViews.setImageViewResource(R.id.weather_icon, R.drawable.mostly_sunny);
                         break;
+
                 }
+                lastUpdateAt = new Date();
             } catch (Exception e) {
-                if (new Date().getTime() - lastUpdateAt.getTime() > 7200000) {
+                if (lastUpdateAt == null) {
+                    remoteViews.setTextViewTextSize(R.id.weather_text, 1, 12.0f);
+                    remoteViews.setTextColor(R.id.weather_text, Color.RED);
+                    remoteViews.setTextViewText(R.id.weather_text, "Can't get weather!");
+                } else if (new Date().getTime() - lastUpdateAt.getTime() > 7200000) {
                     remoteViews.setTextColor(R.id.not_updated, Color.RED);
                     remoteViews.setTextViewText(R.id.not_updated, "!");
                 }
@@ -157,13 +172,5 @@ public class WidgetProvider extends AppWidgetProvider {
         remoteViews.setOnClickPendingIntent(R.id.battery_text, pendingIntent);
 
         appWidgetManager.updateAppWidget(appWidgetIds[0], remoteViews);
-    }
-
-    public static boolean isHasWeather() {
-        return hasWeather;
-    }
-
-    public static void setHasWeather(boolean hasWeather) {
-        WidgetProvider.hasWeather = hasWeather;
     }
 }

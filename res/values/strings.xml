@@ -8,4 +8,5 @@
     <string name="weather_icon_name">Icon to show weather</string>
     <string name="weather_on">Turn weather on</string>
     <string name="weather_off">Turn weather off</string>
+    <string name="getting_weather">Getting weather…</string>
 </resources>
