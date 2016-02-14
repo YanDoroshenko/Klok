@@ -90,7 +90,7 @@ public class WidgetProvider extends AppWidgetProvider {
             try {
                 StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
                 StrictMode.setThreadPolicy(policy);
-                Connection connection = Jsoup.connect("https://weather.yahoo.com");
+                Connection connection = Jsoup.connect("https://weather.yahoo.com").timeout(5000);
                 Document document = connection.get();
                 String current_temperature = " " + document.getElementsByClass("num").get(1).text() + "°";
                 String high_temperature = " " + document.getElementsByClass("hi").get(1).text();
@@ -102,6 +102,7 @@ public class WidgetProvider extends AppWidgetProvider {
                 remoteViews.setTextViewText(R.id.high_temperature, high_temperature);
                 remoteViews.setTextViewText(R.id.low_temperature, low_temperature);
                 remoteViews.setTextViewText(R.id.not_updated, "");
+                lastUpdateAt = new Date();
                 switch (condition) {
                     case "Mostly Clear":
                         remoteViews.setImageViewResource(R.id.weather_icon, R.drawable.mostly_clear);
@@ -124,15 +125,14 @@ public class WidgetProvider extends AppWidgetProvider {
                     case "Mostly Sunny":
                         remoteViews.setImageViewResource(R.id.weather_icon, R.drawable.mostly_sunny);
                         break;
-
                 }
-                lastUpdateAt = new Date();
+
             } catch (Exception e) {
                 if (lastUpdateAt == null) {
                     remoteViews.setTextViewTextSize(R.id.weather_text, 1, 12.0f);
                     remoteViews.setTextColor(R.id.weather_text, Color.RED);
                     remoteViews.setTextViewText(R.id.weather_text, "Can't get weather!");
-                } else if (new Date().getTime() - lastUpdateAt.getTime() > 7200000) {
+                } else if (new Date().getTime() - lastUpdateAt.getTime() > 20000) {
                     remoteViews.setTextColor(R.id.not_updated, Color.RED);
                     remoteViews.setTextViewText(R.id.not_updated, "!");
                 }
