@@ -132,7 +132,7 @@ public class WidgetProvider extends AppWidgetProvider {
                     remoteViews.setTextViewTextSize(R.id.weather_text, 1, 12.0f);
                     remoteViews.setTextColor(R.id.weather_text, Color.RED);
                     remoteViews.setTextViewText(R.id.weather_text, "Can't get weather!");
-                } else if (new Date().getTime() - lastUpdateAt.getTime() > 20000) {
+                } else if (new Date().getTime() - lastUpdateAt.getTime() > 7200000) {
                     remoteViews.setTextColor(R.id.not_updated, Color.RED);
                     remoteViews.setTextViewText(R.id.not_updated, "!");
                 }
