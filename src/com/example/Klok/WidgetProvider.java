@@ -6,9 +6,11 @@ import android.appwidget.AppWidgetProvider;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.BatteryManager;
 import android.os.StrictMode;
+import android.preference.PreferenceManager;
 import android.provider.Settings;
 import android.widget.RemoteViews;
 import org.jsoup.Connection;
@@ -23,7 +25,6 @@ import java.util.Date;
  */
 public class WidgetProvider extends AppWidgetProvider {
     private static boolean hasWeather = true;
-    private static Date lastUpdateAt = null;
 
     public static boolean isHasWeather() {
         return hasWeather;
@@ -85,8 +86,10 @@ public class WidgetProvider extends AppWidgetProvider {
             }
         } else {
 
-            /*Getting and drawing weather*/
+            /*Setting persistent variable to store last update time*/
+            SharedPreferences updatedTimeStorage = PreferenceManager.getDefaultSharedPreferences(context);
 
+            /*Getting and drawing weather*/
             try {
                 StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
                 StrictMode.setThreadPolicy(policy);
@@ -102,7 +105,7 @@ public class WidgetProvider extends AppWidgetProvider {
                 remoteViews.setTextViewText(R.id.high_temperature, high_temperature);
                 remoteViews.setTextViewText(R.id.low_temperature, low_temperature);
                 remoteViews.setTextViewText(R.id.not_updated, "");
-                lastUpdateAt = new Date();
+                updatedTimeStorage.edit().putLong("updatedAt", new Date().getTime()).commit();
                 switch (condition) {
                     case "Mostly Clear":
                         remoteViews.setImageViewResource(R.id.weather_icon, R.drawable.mostly_clear);
@@ -126,13 +129,14 @@ public class WidgetProvider extends AppWidgetProvider {
                         remoteViews.setImageViewResource(R.id.weather_icon, R.drawable.mostly_sunny);
                         break;
                 }
-
             } catch (Exception e) {
-                if (lastUpdateAt == null) {
+                long updatedAt = updatedTimeStorage.getLong("updatedAt", 0);
+                if (updatedAt == 0) {
                     remoteViews.setTextViewTextSize(R.id.weather_text, 1, 12.0f);
                     remoteViews.setTextColor(R.id.weather_text, Color.RED);
                     remoteViews.setTextViewText(R.id.weather_text, "Can't get weather!");
-                } else if (new Date().getTime() - lastUpdateAt.getTime() > 7200000) {
+                    remoteViews.setTextViewText(R.id.not_updated, "");
+                } else if (new Date().getTime() - updatedAt > 7200000) {
                     remoteViews.setTextColor(R.id.not_updated, Color.RED);
                     remoteViews.setTextViewText(R.id.not_updated, "!");
                 }
