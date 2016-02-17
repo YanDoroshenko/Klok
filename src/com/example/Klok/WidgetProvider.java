@@ -11,6 +11,7 @@ import android.graphics.Color;
 import android.os.BatteryManager;
 import android.os.StrictMode;
 import android.preference.PreferenceManager;
+import android.provider.AlarmClock;
 import android.provider.Settings;
 import android.widget.RemoteViews;
 import org.jsoup.Connection;
@@ -167,14 +168,29 @@ public class WidgetProvider extends AppWidgetProvider {
             }
         }
 
-        /*Redrawing and updating widget*/
+        /*Launch system alarm app on clock click*/
+        Intent openClockIntent = new Intent(AlarmClock.ACTION_SHOW_ALARMS);
+        openClockIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        PendingIntent clockPendingIntent = PendingIntent.getActivity(context, 0, openClockIntent, 0);
+        remoteViews.setOnClickPendingIntent(R.id.textClock, clockPendingIntent);
+
+
+        /*Update widget on everything else click*/
         Intent intent = new Intent(context, WidgetProvider.class);
         intent.setAction(AppWidgetManager.ACTION_APPWIDGET_UPDATE);
         intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS, appWidgetIds);
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
-        remoteViews.setOnClickPendingIntent(R.id.battery_icon, pendingIntent);
-        remoteViews.setOnClickPendingIntent(R.id.battery_text, pendingIntent);
+        PendingIntent updatePendingIntent = PendingIntent.getBroadcast(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+        remoteViews.setOnClickPendingIntent(R.id.alarm_icon, updatePendingIntent);
+        remoteViews.setOnClickPendingIntent(R.id.alarm_text, updatePendingIntent);
+        remoteViews.setOnClickPendingIntent(R.id.battery_icon, updatePendingIntent);
+        remoteViews.setOnClickPendingIntent(R.id.battery_text, updatePendingIntent);
+        remoteViews.setOnClickPendingIntent(R.id.weather_icon, updatePendingIntent);
+        remoteViews.setOnClickPendingIntent(R.id.weather_text, updatePendingIntent);
+        remoteViews.setOnClickPendingIntent(R.id.low_temperature, updatePendingIntent);
+        remoteViews.setOnClickPendingIntent(R.id.high_temperature, updatePendingIntent);
 
+        /*Redrawing and updating widget*/
         appWidgetManager.updateAppWidget(appWidgetIds[0], remoteViews);
+
     }
 }

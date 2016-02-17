@@ -2,7 +2,10 @@
 <resources>
     <string name="app_name">Klok</string>
     <string name="battery_icon">battery icon</string>
-    <string name="main_text">Success! Now put the widget on your desktop. \nWidget updates every 30 minutes. To update it manually tap the battery.    </string>
+    <string name="main_text">Success! Now put the widget on your desktop.\n
+        Widget updates every 30 minutes.\n
+        To launch alarm app tap the clock.\nTo update widget manually tap anything else.
+    </string>
     <string name="battery_text">Battery Text</string>
     <string name="alarm_icon">Alarm Text</string>
     <string name="weather_icon_name">Icon to show weather</string>
