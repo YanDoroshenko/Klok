@@ -45,7 +45,7 @@ public class WidgetProvider extends AppWidgetProvider {
         int scale = batteryStatus.getIntExtra(BatteryManager.EXTRA_SCALE, -1);
         int batteryPct = (int) (level / (float) scale * 100);
 
-        /*Remote views change contenrs of layout*/
+        /*Remote views change contents of layout*/
         RemoteViews remoteViews = new RemoteViews(context.getPackageName(), R.layout.widget);
 
         /*Getting alarm*/
@@ -128,6 +128,9 @@ public class WidgetProvider extends AppWidgetProvider {
                         break;
                     case "Mostly Sunny":
                         remoteViews.setImageViewResource(R.id.weather_icon, R.drawable.mostly_sunny);
+                        break;
+                    case "Snow":
+                        remoteViews.setImageViewResource(R.id.weather_icon, R.drawable.snow);
                         break;
                 }
             } catch (Exception e) {
