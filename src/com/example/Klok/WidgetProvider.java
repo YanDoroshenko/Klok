@@ -135,6 +135,9 @@ public class WidgetProvider extends AppWidgetProvider {
                     case "Snow Showers":
                         remoteViews.setImageViewResource(R.id.weather_icon, R.drawable.snow_showers);
                         break;
+                    case "Fog":
+                        remoteViews.setImageViewResource(R.id.weather_icon, R.drawable.fog);
+                        break;
                 }
             } catch (Exception e) {
                 long updatedAt = updatedTimeStorage.getLong("updatedAt", 0);
