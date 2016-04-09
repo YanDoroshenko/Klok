@@ -17,6 +17,7 @@ import android.widget.RemoteViews;
 import org.jsoup.Connection;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
 
 import java.util.Date;
 
@@ -94,30 +95,49 @@ public class WidgetProvider extends AppWidgetProvider {
             try {
                 StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
                 StrictMode.setThreadPolicy(policy);
-                Connection connection = Jsoup.connect("https://weather.yahoo.com").timeout(5000);
+
+                String main = "https://gismeteo.com";
+
+                Connection connection = Jsoup.connect(main).timeout(5000);
                 Document document = connection.get();
-                String current_temperature = " " + document.getElementsByClass("num").get(1).text() + "°";
-                String high_temperature = " " + document.getElementsByClass("hi").get(1).text();
-                String low_temperature = " " + document.getElementsByClass("lo").get(1).text();
-                String condition = document.getElementsByClass("cond").first().text();
+                Element temp = document.getElementsByClass("temp").get(0);
+                String current_temperature = temp.getElementsByClass("c").text();
+                String sign = current_temperature.charAt(0) == '-' ? " -" : " +";
+                current_temperature = current_temperature.substring(1, current_temperature.length() - 2);
+                String measurements = temp.getElementsByClass("meas").get(0).text();
+                String condition = document.getElementsByClass("cloudness").first().getElementsByTag("td").text();
+
+
+                connection = Jsoup.connect(document.getElementsByClass("fcast").select("a").attr("abs:href"));
+                document = connection.get();
+                temp = document.getElementsByClass("swtab").first().getElementsByClass("temp").get(0);
+                String high_temperature = " " + temp.getElementsByClass("c").get(0).text() + measurements.substring(0, 1);
+                String low_temperature = " " + temp.getElementsByClass("c").get(1).text() + measurements.substring(0, 1);
+
+
                 remoteViews.setTextViewTextSize(R.id.weather_text, 1, 25.0f);
                 remoteViews.setTextColor(R.id.weather_text, Color.LTGRAY);
+                remoteViews.setTextViewText(R.id.sign, sign);
                 remoteViews.setTextViewText(R.id.weather_text, current_temperature);
+                remoteViews.setTextViewText(R.id.measurements, measurements);
                 remoteViews.setTextViewText(R.id.high_temperature, high_temperature);
                 remoteViews.setTextViewText(R.id.low_temperature, low_temperature);
                 remoteViews.setTextViewText(R.id.not_updated, "");
                 updatedTimeStorage.edit().putLong("updatedAt", new Date().getTime()).commit();
                 switch (condition) {
-                    case "Mostly Clear":
+                    case "Fair":
+                        remoteViews.setImageViewResource(R.id.weather_icon, R.drawable.clear);
+                        break;
+                    case "Mainly fair":
                         remoteViews.setImageViewResource(R.id.weather_icon, R.drawable.mostly_clear);
                         break;
-                    case "Showers":
+                    case "Mainly cloudy, showers":
                         remoteViews.setImageViewResource(R.id.weather_icon, R.drawable.showers);
                         break;
-                    case "Mostly Cloudy":
+                    case "Mainly cloudy":
                         remoteViews.setImageViewResource(R.id.weather_icon, R.drawable.mostly_cloudy);
                         break;
-                    case "Partly Cloudy":
+                    case "Partly cloudy":
                         remoteViews.setImageViewResource(R.id.weather_icon, R.drawable.partly_cloudy);
                         break;
                     case "Light Rain":
@@ -132,12 +152,12 @@ public class WidgetProvider extends AppWidgetProvider {
                     case "Snow":
                         remoteViews.setImageViewResource(R.id.weather_icon, R.drawable.snow);
                         break;
-                    case "Snow Showers":
+                    /*case "Snow Showers":
                         remoteViews.setImageViewResource(R.id.weather_icon, R.drawable.snow_showers);
                         break;
                     case "Fog":
                         remoteViews.setImageViewResource(R.id.weather_icon, R.drawable.fog);
-                        break;
+                        break;*/
                 }
             } catch (Exception e) {
                 long updatedAt = updatedTimeStorage.getLong("updatedAt", 0);
