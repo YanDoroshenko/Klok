@@ -23,16 +23,16 @@ import java.util.Date;
 
 
 /**
- * Created by yan on 04.02.16.
+ * Main class that parses weather from gismeteo.com and sets values for drawing
  */
 public class WidgetProvider extends AppWidgetProvider {
     private static boolean hasWeather = true;
 
-    public static boolean isHasWeather() {
+    private static boolean isHasWeather() {
         return hasWeather;
     }
 
-    public static void setHasWeather(boolean hasWeather) {
+    private static void setHasWeather(boolean hasWeather) {
         WidgetProvider.hasWeather = hasWeather;
     }
 
@@ -42,6 +42,7 @@ public class WidgetProvider extends AppWidgetProvider {
         /*Battery readers*/
         IntentFilter ifilter = new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
         Intent batteryStatus = context.registerReceiver(null, ifilter);
+        assert batteryStatus != null;
         int level = batteryStatus.getIntExtra(BatteryManager.EXTRA_LEVEL, -1);
         int scale = batteryStatus.getIntExtra(BatteryManager.EXTRA_SCALE, -1);
         int batteryPct = (int) (level / (float) scale * 100);
@@ -111,8 +112,8 @@ public class WidgetProvider extends AppWidgetProvider {
                 connection = Jsoup.connect(document.getElementsByClass("fcast").select("a").attr("abs:href"));
                 document = connection.get();
                 temp = document.getElementsByClass("swtab").first().getElementsByClass("temp").get(0);
-                String high_temperature = " " + temp.getElementsByClass("c").get(0).text() + measurements.substring(0, 1);
-                String low_temperature = " " + temp.getElementsByClass("c").get(1).text() + measurements.substring(0, 1);
+                String high_temperature = " " + temp.getElementsByClass("c").get(1).text() + measurements.substring(0, 1);
+                String low_temperature = " " + temp.getElementsByClass("c").get(0).text() + measurements.substring(0, 1);
 
 
                 remoteViews.setTextViewTextSize(R.id.weather_text, 1, 25.0f);
@@ -123,7 +124,7 @@ public class WidgetProvider extends AppWidgetProvider {
                 remoteViews.setTextViewText(R.id.high_temperature, high_temperature);
                 remoteViews.setTextViewText(R.id.low_temperature, low_temperature);
                 remoteViews.setTextViewText(R.id.not_updated, "");
-                updatedTimeStorage.edit().putLong("updatedAt", new Date().getTime()).commit();
+                updatedTimeStorage.edit().putLong("updatedAt", new Date().getTime()).apply();
                 switch (condition) {
                     case "Fair":
                         remoteViews.setImageViewResource(R.id.weather_icon, R.drawable.clear);
