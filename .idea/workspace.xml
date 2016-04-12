@@ -9,9 +9,14 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3118a736-9085-4080-b1c4-4ee47af906e6" name="Default" comment="Fixed low-high weather, time updated applying in the background instead of writing immediately">
+    <list default="true" id="3118a736-9085-4080-b1c4-4ee47af906e6" name="Default" comment="Fixed low-high weather, time updated applying in the background instead of writing immediately, minor code fixes">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Klok/Klok.apk" afterPath="$PROJECT_DIR$/out/production/Klok/Klok.apk" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Klok/Klok.unaligned.apk" afterPath="$PROJECT_DIR$/out/production/Klok/Klok.unaligned.apk" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Klok/com/example/Klok/R$drawable.class" afterPath="$PROJECT_DIR$/out/production/Klok/com/example/Klok/R$drawable.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Klok/com/example/Klok/R$id.class" afterPath="$PROJECT_DIR$/out/production/Klok/com/example/Klok/R$id.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Klok/com/example/Klok/R$layout.class" afterPath="$PROJECT_DIR$/out/production/Klok/com/example/Klok/R$layout.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Klok/com/example/Klok/R$string.class" afterPath="$PROJECT_DIR$/out/production/Klok/com/example/Klok/R$string.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Klok/com/example/Klok/R$xml.class" afterPath="$PROJECT_DIR$/out/production/Klok/com/example/Klok/R$xml.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Klok/com/example/Klok/WidgetProvider.class" afterPath="$PROJECT_DIR$/out/production/Klok/com/example/Klok/WidgetProvider.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/Klok/WidgetProvider.java" afterPath="$PROJECT_DIR$/src/com/example/Klok/WidgetProvider.java" />
@@ -40,12 +45,10 @@
       <file leaf-file-name="WidgetProvider.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/example/Klok/WidgetProvider.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="134">
-              <caret line="45" column="78" selection-start-line="45" selection-start-column="78" selection-end-line="45" selection-end-column="78" />
+            <state relative-caret-position="213">
+              <caret line="38" column="13" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#912#913#0" expanded="true" />
-                <element signature="e#945#946#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -130,8 +133,8 @@
       <file leaf-file-name="MyActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/example/Klok/MyActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="37" column="4" selection-start-line="37" selection-start-column="4" selection-end-line="37" selection-end-column="4" />
+            <state relative-caret-position="255">
+              <caret line="24" column="60" selection-start-line="24" selection-start-column="60" selection-end-line="24" selection-end-column="60" />
               <folding />
             </state>
           </provider>
@@ -222,8 +225,6 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -262,6 +263,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -640,13 +643,13 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32866043" sideWeight="0.49707174" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32866043" sideWeight="0.49707174" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32866043" sideWeight="0.50292826" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33021808" sideWeight="0.49707174" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33021808" sideWeight="0.49707174" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32866043" sideWeight="0.49707174" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -695,7 +698,8 @@
     <MESSAGE value="Added snow showers." />
     <MESSAGE value="Migrated to gismeteo.com, not all weather conditions work." />
     <MESSAGE value="Fixed low-high weather, time updated applying in the background instead of writing immediately" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed low-high weather, time updated applying in the background instead of writing immediately" />
+    <MESSAGE value="Fixed low-high weather, time updated applying in the background instead of writing immediately, minor code fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed low-high weather, time updated applying in the background instead of writing immediately, minor code fixes" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -763,8 +767,6 @@
           <caret line="28" column="28" selection-start-line="28" selection-start-column="28" selection-end-line="28" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#912#913#0" expanded="true" />
-            <element signature="e#945#946#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -821,8 +823,6 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#912#913#0" expanded="true" />
-            <element signature="e#945#946#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -833,8 +833,6 @@
           <caret line="28" column="28" selection-start-line="28" selection-start-column="28" selection-end-line="28" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#912#913#0" expanded="true" />
-            <element signature="e#945#946#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -845,8 +843,6 @@
           <caret line="31" column="86" selection-start-line="31" selection-start-column="86" selection-end-line="31" selection-end-column="86" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#912#913#0" expanded="true" />
-            <element signature="e#945#946#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -903,8 +899,6 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#912#913#0" expanded="true" />
-            <element signature="e#945#946#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -961,8 +955,6 @@
           <caret line="43" column="73" selection-start-line="43" selection-start-column="73" selection-end-line="43" selection-end-column="73" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#912#913#0" expanded="true" />
-            <element signature="e#945#946#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1011,8 +1003,6 @@
           <caret line="43" column="73" selection-start-line="43" selection-start-column="73" selection-end-line="43" selection-end-column="73" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#912#913#0" expanded="true" />
-            <element signature="e#945#946#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1050,8 +1040,6 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#912#913#0" expanded="true" />
-            <element signature="e#945#946#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1073,8 +1061,6 @@
           <caret line="12" column="8" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="64" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#912#913#0" expanded="true" />
-            <element signature="e#945#946#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1119,18 +1105,6 @@
         <state relative-caret-position="0">
           <caret line="3" column="35" selection-start-line="3" selection-start-column="35" selection-end-line="3" selection-end-column="35" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/Klok/WidgetProvider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="134">
-          <caret line="45" column="78" selection-start-line="45" selection-start-column="78" selection-end-line="45" selection-end-column="78" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#912#913#0" expanded="true" />
-            <element signature="e#945#946#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1198,9 +1172,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/Klok/MyActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="37" column="4" selection-start-line="37" selection-start-column="4" selection-end-line="37" selection-end-column="4" />
+        <state relative-caret-position="255">
+          <caret line="24" column="60" selection-start-line="24" selection-start-column="60" selection-end-line="24" selection-end-column="60" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/Klok/WidgetProvider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="213">
+          <caret line="38" column="13" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

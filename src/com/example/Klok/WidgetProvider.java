@@ -28,11 +28,11 @@ import java.util.Date;
 public class WidgetProvider extends AppWidgetProvider {
     private static boolean hasWeather = true;
 
-    private static boolean isHasWeather() {
+    static boolean isHasWeather() {
         return hasWeather;
     }
 
-    private static void setHasWeather(boolean hasWeather) {
+    static void setHasWeather(boolean hasWeather) {
         WidgetProvider.hasWeather = hasWeather;
     }
 
@@ -126,39 +126,13 @@ public class WidgetProvider extends AppWidgetProvider {
                 remoteViews.setTextViewText(R.id.not_updated, "");
                 updatedTimeStorage.edit().putLong("updatedAt", new Date().getTime()).apply();
                 switch (condition) {
-                    case "Fair":
-                        remoteViews.setImageViewResource(R.id.weather_icon, R.drawable.clear);
-                        break;
-                    case "Mainly fair":
-                        remoteViews.setImageViewResource(R.id.weather_icon, R.drawable.mostly_clear);
-                        break;
-                    case "Mainly cloudy, showers":
-                        remoteViews.setImageViewResource(R.id.weather_icon, R.drawable.showers);
-                        break;
                     case "Mainly cloudy":
                         remoteViews.setImageViewResource(R.id.weather_icon, R.drawable.mostly_cloudy);
                         break;
-                    case "Partly cloudy":
-                        remoteViews.setImageViewResource(R.id.weather_icon, R.drawable.partly_cloudy);
-                        break;
-                    case "Light Rain":
-                        remoteViews.setImageViewResource(R.id.weather_icon, R.drawable.light_rain);
-                        break;
-                    case "Cloudy":
-                        remoteViews.setImageViewResource(R.id.weather_icon, R.drawable.cloudy);
-                        break;
-                    case "Mostly Sunny":
-                        remoteViews.setImageViewResource(R.id.weather_icon, R.drawable.mostly_sunny);
-                        break;
-                    case "Snow":
-                        remoteViews.setImageViewResource(R.id.weather_icon, R.drawable.snow);
-                        break;
-                    /*case "Snow Showers":
-                        remoteViews.setImageViewResource(R.id.weather_icon, R.drawable.snow_showers);
-                        break;
-                    case "Fog":
-                        remoteViews.setImageViewResource(R.id.weather_icon, R.drawable.fog);
-                        break;*/
+                    case "Brume":
+                        remoteViews.setImageViewResource(R.id.weather_icon, R.drawable.brume);
+                    case "Mainly cloudy, brume":
+                        remoteViews.setImageViewResource(R.id.weather_icon, R.drawable.mostly_cloudy_brume);
                 }
             } catch (Exception e) {
                 long updatedAt = updatedTimeStorage.getLong("updatedAt", 0);
