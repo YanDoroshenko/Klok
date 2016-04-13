@@ -7,6 +7,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.os.BatteryManager;
 import android.os.StrictMode;
@@ -24,6 +26,7 @@ import java.util.Date;
 
 /**
  * Main class that parses weather from gismeteo.com and sets values for drawing
+ * @author Yan Doroshenko
  */
 public class WidgetProvider extends AppWidgetProvider {
     private static boolean hasWeather = true;
@@ -106,7 +109,7 @@ public class WidgetProvider extends AppWidgetProvider {
                 String sign = current_temperature.charAt(0) == '-' ? " -" : " +";
                 current_temperature = current_temperature.substring(1, current_temperature.length() - 2);
                 String measurements = temp.getElementsByClass("meas").get(0).text();
-                String condition = document.getElementsByClass("cloudness").first().getElementsByTag("td").text();
+                String conditionStr = document.getElementsByClass("cloudness").first().getElementsByTag("td").text();
 
 
                 connection = Jsoup.connect(document.getElementsByClass("fcast").select("a").attr("abs:href"));
@@ -115,6 +118,7 @@ public class WidgetProvider extends AppWidgetProvider {
                 String high_temperature = " " + temp.getElementsByClass("c").get(1).text() + measurements.substring(0, 1);
                 String low_temperature = " " + temp.getElementsByClass("c").get(0).text() + measurements.substring(0, 1);
 
+                WeatherCondition condition = WeatherCondition.condition(conditionStr);
 
                 remoteViews.setTextViewTextSize(R.id.weather_text, 1, 25.0f);
                 remoteViews.setTextColor(R.id.weather_text, Color.LTGRAY);
@@ -124,16 +128,9 @@ public class WidgetProvider extends AppWidgetProvider {
                 remoteViews.setTextViewText(R.id.high_temperature, high_temperature);
                 remoteViews.setTextViewText(R.id.low_temperature, low_temperature);
                 remoteViews.setTextViewText(R.id.not_updated, "");
+                Bitmap icon = BitmapFactory.decodeResource(context.getResources(), condition.getIconId());
+                remoteViews.setImageViewBitmap(R.id.weather_icon, icon);
                 updatedTimeStorage.edit().putLong("updatedAt", new Date().getTime()).apply();
-                switch (condition) {
-                    case "Mainly cloudy":
-                        remoteViews.setImageViewResource(R.id.weather_icon, R.drawable.mostly_cloudy);
-                        break;
-                    case "Brume":
-                        remoteViews.setImageViewResource(R.id.weather_icon, R.drawable.brume);
-                    case "Mainly cloudy, brume":
-                        remoteViews.setImageViewResource(R.id.weather_icon, R.drawable.mostly_cloudy_brume);
-                }
             } catch (Exception e) {
                 long updatedAt = updatedTimeStorage.getLong("updatedAt", 0);
                 if (updatedAt == 0) {
