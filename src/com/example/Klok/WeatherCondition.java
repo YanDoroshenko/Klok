@@ -8,11 +8,14 @@ package com.example.Klok;
 enum WeatherCondition {
 
     Fair("Fair", R.drawable.fair),
-    MainlyCloudy("Mainly cloudy", R.drawable.mainlycloudy),
-    Brume("Brume", R.drawable.brume),
-    MainlyCloudyBrume("Mainly cloudy, brume", R.drawable.mainlycloudybrume),
+    FairSmoke("Fair, smoke", R.drawable.fairsmoke),
+    PartlyCloudy("Partly cloudy", R.drawable.partlycloudy),
     Cloudy("Cloudy", R.drawable.cloudy),
+    MainlyCloudy("Mainly cloudy", R.drawable.mainlycloudy),
+    MainlyCloudyBrume("Mainly cloudy, brume", R.drawable.mainlycloudybrume),
+    MainlyCloudyRain("Mainly cloudy, rain", R.drawable.mainlycloudyrain),
     MainlyCloudyRainStorm("Mainly cloudy, rain, storm", R.drawable.mainlycloudyrainstorm),
+    Rain("Rain", R.drawable.rain),
     Unknown("", R.drawable.unknown);
 
 
