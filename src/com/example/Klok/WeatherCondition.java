@@ -20,6 +20,7 @@ enum WeatherCondition {
     LightRain("Light rain", R.drawable.lightrain),
     PartlyCloudyRain("Partly cloudy, rain", R.drawable.partlycloudyrain),
     Rain("Rain", R.drawable.rain),
+    CloudyShowers("Cloudy, showers", R.drawable.cloudyshowers),
     Unknown("", 0);
 
 
