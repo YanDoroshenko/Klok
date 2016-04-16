@@ -14,10 +14,12 @@ enum WeatherCondition {
     Cloudy("Cloudy", R.drawable.cloudy),
     MainlyCloudy("Mainly cloudy", R.drawable.mainlycloudy),
     MainlyCloudyBrume("Mainly cloudy, brume", R.drawable.mainlycloudybrume),
+    MainCloudyLightRain("Mainly cloudy, light rain", R.drawable.mainlycloudylightarin),
     MainlyCloudyRain("Mainly cloudy, rain", R.drawable.mainlycloudyrain),
     MainlyCloudyRainStorm("Mainly cloudy, rain, storm", R.drawable.mainlycloudyrainstorm),
+    LightRain("Light rain", R.drawable.lightrain),
     Rain("Rain", R.drawable.rain),
-    Unknown("", R.drawable.unknown);
+    Unknown("", 0);
 
 
     private String conditionString;
