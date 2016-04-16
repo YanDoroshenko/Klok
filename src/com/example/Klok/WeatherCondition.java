@@ -9,18 +9,20 @@ enum WeatherCondition {
 
     Fair("Fair", R.drawable.fair),
     FairSmoke("Fair, smoke", R.drawable.fairsmoke),
+    FairDistantLightnings("Fair, distant lightnings", R.drawable.fairdistinctlightnings),
     Brume("Brume", R.drawable.brume),
     PartlyCloudy("Partly cloudy", R.drawable.partlycloudy),
+    PartlyCloudyRain("Partly cloudy, rain", R.drawable.partlycloudyrain),
+    PartlyCloudyStorm("Partly cloudy, strom", R.drawable.partlycloudystorm),
     Cloudy("Cloudy", R.drawable.cloudy),
+    CloudyShowers("Cloudy, showers", R.drawable.cloudyshowers),
     MainlyCloudy("Mainly cloudy", R.drawable.mainlycloudy),
     MainlyCloudyBrume("Mainly cloudy, brume", R.drawable.mainlycloudybrume),
     MainCloudyLightRain("Mainly cloudy, light rain", R.drawable.mainlycloudylightarin),
     MainlyCloudyRain("Mainly cloudy, rain", R.drawable.mainlycloudyrain),
     MainlyCloudyRainStorm("Mainly cloudy, rain, storm", R.drawable.mainlycloudyrainstorm),
     LightRain("Light rain", R.drawable.lightrain),
-    PartlyCloudyRain("Partly cloudy, rain", R.drawable.partlycloudyrain),
     Rain("Rain", R.drawable.rain),
-    CloudyShowers("Cloudy, showers", R.drawable.cloudyshowers),
     Unknown("", 0);
 
 
