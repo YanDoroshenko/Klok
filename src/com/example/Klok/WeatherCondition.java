@@ -18,6 +18,7 @@ enum WeatherCondition {
     MainlyCloudyRain("Mainly cloudy, rain", R.drawable.mainlycloudyrain),
     MainlyCloudyRainStorm("Mainly cloudy, rain, storm", R.drawable.mainlycloudyrainstorm),
     LightRain("Light rain", R.drawable.lightrain),
+    PartlyCloudyRain("Partly cloudy, rain", R.drawable.partlycloudyrain),
     Rain("Rain", R.drawable.rain),
     Unknown("", 0);
 
