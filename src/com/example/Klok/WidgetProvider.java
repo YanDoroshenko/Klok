@@ -26,6 +26,7 @@ import java.util.Date;
 
 /**
  * Main class that parses weather from gismeteo.com and sets values for drawing
+ *
  * @author Yan Doroshenko
  */
 public class WidgetProvider extends AppWidgetProvider {
@@ -129,7 +130,8 @@ public class WidgetProvider extends AppWidgetProvider {
                 remoteViews.setTextViewText(R.id.low_temperature, low_temperature);
                 remoteViews.setTextViewText(R.id.not_updated, "");
                 Bitmap icon = BitmapFactory.decodeResource(context.getResources(), condition.getIconId());
-                remoteViews.setImageViewBitmap(R.id.weather_icon, icon);
+                if (condition != WeatherCondition.Unknown)
+                    remoteViews.setImageViewBitmap(R.id.weather_icon, icon);
                 updatedTimeStorage.edit().putLong("updatedAt", new Date().getTime()).apply();
             } catch (Exception e) {
                 long updatedAt = updatedTimeStorage.getLong("updatedAt", 0);
