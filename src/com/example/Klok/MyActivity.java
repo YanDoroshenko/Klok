@@ -22,13 +22,14 @@ public class MyActivity extends Activity {
         final Button button = (Button) findViewById(R.id.weather_switch);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                WidgetProvider.setHasWeather(!WidgetProvider.isHasWeather());
-                if (WidgetProvider.isHasWeather())
+                DataStorage storage = new DataStorage(getApplicationContext());
+                storage.alterWeather();
+                if (storage.readHasWeather())
                     ((Button) findViewById(R.id.weather_switch)).setText(R.string.weather_off);
                 else
                     ((Button) findViewById(R.id.weather_switch)).setText(R.string.weather_on);
                 Context context = getApplicationContext();
-                CharSequence text = WidgetProvider.isHasWeather() ? "Weather will appear after widget update" : "Weather will disappear after widget update";
+                CharSequence text = storage.readHasWeather() ? "Weather will appear after widget update" : "Weather will disappear after widget update";
                 int duration = Toast.LENGTH_SHORT;
 
                 Toast toast = Toast.makeText(context, text, duration);

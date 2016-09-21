@@ -6,10 +6,12 @@
         Widget updates every 30 minutes.\n
         To launch alarm app tap the clock.\nTo update widget manually tap anything else.
     </string>
-    <string name="battery_text">Battery Text</string>
     <string name="alarm_icon">Alarm Text</string>
     <string name="weather_icon_name">Icon to show weather</string>
     <string name="weather_on">Turn weather on</string>
     <string name="weather_off">Turn weather off</string>
     <string name="getting_weather">Getting weather…</string>
+    <string name="battery_text">Reading battery state…</string>
+    <string name="notification">You can disable weather indication using an app</string>
+    <string name="outdated">!</string>
 </resources>

@@ -1,51 +1,68 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:orientation="vertical"
               android:layout_height="match_parent"
-              android:layout_width="match_parent" android:gravity="center_horizontal">
+              android:layout_width="match_parent"
+              android:gravity="center_horizontal">
 
     <TextClock android:id="@+id/textClock"
                android:fontFamily="sans-serif-thin"
-               android:textSize="@dimen/text_size_time" android:layout_width="match_parent"
-               android:layout_height="wrap_content" android:layout_gravity="center_horizontal"
+               android:textSize="@dimen/text_size_time"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_gravity="center_horizontal"
                android:gravity="center_horizontal"/>
 
     <LinearLayout
             android:orientation="horizontal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal" android:gravity="center" android:layout_marginTop="-10dp">
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:layout_marginTop="-10dp">
         <ImageView android:id="@+id/battery_icon"
                    android:contentDescription="@string/battery_icon"
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
-                   android:src="@drawable/battery100" android:layout_gravity="center"/>
+                   android:src="@drawable/battery100"
+                   android:layout_gravity="center"
+        />
         <TextView android:id="@+id/battery_text"
                   android:text="@string/battery_text"
                   android:layout_width="wrap_content"
-                  android:layout_height="wrap_content" android:layout_gravity="center"
+                  android:layout_height="wrap_content"
+                  android:layout_gravity="center"
         />
         <ImageView android:id="@+id/alarm_icon"
                    android:contentDescription="@string/alarm_icon"
                    android:layout_width="wrap_content"
-                   android:layout_height="wrap_content" android:layout_gravity="center"/>
+                   android:layout_height="wrap_content"
+                   android:layout_gravity="center"/>
         <TextView android:id="@+id/alarm_text"
                   android:layout_width="wrap_content"
-                  android:layout_height="wrap_content" android:layout_gravity="center"/>
+                  android:layout_height="wrap_content"
+                  android:layout_gravity="center"/>
     </LinearLayout>
     <LinearLayout
             android:orientation="horizontal"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:layout_marginTop="5dp">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp">
         <ImageView android:id="@+id/weather_icon"
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
-                   android:layout_gravity="center" android:contentDescription="@string/weather_icon_name"/>
+                   android:layout_gravity="center"
+                   android:contentDescription="@string/weather_icon_name"/>
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=""
+                android:text="@string/outdated"
                 android:layout_gravity="center"
-                android:id="@+id/not_updated" android:fontFamily="sans-serif-bold" android:textSize="20sp"/>
+                android:id="@+id/not_updated"
+                android:fontFamily="sans-serif-bold"
+                android:textSize="20sp"
+                android:textColor="#ff0000"
+                android:visibility="invisible"
+        />
         <TextView android:id="@+id/sign"
                   android:layout_width="wrap_content"
                   android:layout_height="wrap_content"
