@@ -21,6 +21,13 @@ import java.util.Date;
 public class Widget extends AppWidgetProvider {
 
     @Override
+    public void onDeleted(Context context, int[] appWidgetIds) {
+        DataStorage storage = new DataStorage(context.getApplicationContext());
+        storage.resetUpdated();
+        storage.writeHasWeather(true);
+    }
+
+    @Override
     public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
         RemoteViews remoteViews = new RemoteViews(context.getPackageName(), R.layout.widget);
         DataStorage storage = new DataStorage(context.getApplicationContext());
@@ -30,7 +37,8 @@ public class Widget extends AppWidgetProvider {
             AlarmReader alarm = new AlarmReader(context);
             drawSmallAlarm(alarm.alarmSet(), alarm.readAlarm(), remoteViews);
             try {
-                showWeather(new GismeteoParser().getWeather(), remoteViews, context);
+                drawWeather(new GismeteoParser().getWeather(), remoteViews, context);
+                storage.writeUpdated();
             } catch (IOException e) {
                 if (storage.readUpdated() == -1) {
                     drawError(remoteViews);
@@ -50,8 +58,6 @@ public class Widget extends AppWidgetProvider {
         openClockIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         PendingIntent clockPendingIntent = PendingIntent.getActivity(context, 0, openClockIntent, 0);
         remoteViews.setOnClickPendingIntent(R.id.textClock, clockPendingIntent);
-
-        //remoteViews.setTextViewText(R.id.weather_text, String.valueOf(new Random().nextInt() % 100));
 
         /*Update widget on everything else click*/
         Intent intent = new Intent(context, Widget.class);
@@ -127,13 +133,13 @@ public class Widget extends AppWidgetProvider {
         }
     }
 
-    private void showWeather(Weather weather, RemoteViews remoteViews, Context context) {
+    private void drawWeather(Weather weather, RemoteViews remoteViews, Context context) {
         showWeather(remoteViews);
         remoteViews.setViewVisibility(R.id.not_updated, 0);
         remoteViews.setTextColor(R.id.weather_text, Color.LTGRAY);
         remoteViews.setTextViewTextSize(R.id.weather_text, 1, 25.0f);
         remoteViews.setTextColor(R.id.weather_text, Color.LTGRAY);
-        remoteViews.setTextViewText(R.id.sign, weather.isBelowZero() ? "-" : "+");
+        remoteViews.setTextViewText(R.id.sign, " " + (weather.isBelowZero() ? "-" : "+"));
         remoteViews.setTextViewText(R.id.weather_text, weather.getTemperature());
         remoteViews.setTextViewText(R.id.measurements, weather.getMeasurements());
         remoteViews.setTextViewText(R.id.high_temperature, weather.getHi());

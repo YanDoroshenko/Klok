@@ -21,7 +21,7 @@ class DataStorage {
         return preferences.getBoolean("hasWeather", true);
     }
 
-    private void writeHasWeather(boolean hasWeather) {
+    void writeHasWeather(boolean hasWeather) {
         SharedPreferences preferences = context.getSharedPreferences("storage", Context.MODE_PRIVATE);
         preferences.edit().putBoolean("hasWeather", hasWeather).apply();
     }
