@@ -2,4 +2,5 @@
 <resources>
     <dimen name="widget_margin">0dp</dimen>
     <dimen name="text_size_time">75sp</dimen>
+    <dimen name="clock_size">60sp</dimen>
 </resources>

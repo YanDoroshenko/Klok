@@ -18,7 +18,7 @@ import java.util.Date;
 /**
  * Created by YanDoroshenko github.com/YanDoroshenko
  */
-public class Widget extends AppWidgetProvider {
+public class WeatherWidget extends AppWidgetProvider {
 
     @Override
     public void onDeleted(Context context, int[] appWidgetIds) {
@@ -29,7 +29,7 @@ public class Widget extends AppWidgetProvider {
 
     @Override
     public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
-        RemoteViews remoteViews = new RemoteViews(context.getPackageName(), R.layout.widget);
+        RemoteViews remoteViews = new RemoteViews(context.getPackageName(), R.layout.weather_widget);
         DataStorage storage = new DataStorage(context.getApplicationContext());
 
         if (storage.readHasWeather()) {
@@ -59,8 +59,8 @@ public class Widget extends AppWidgetProvider {
         PendingIntent clockPendingIntent = PendingIntent.getActivity(context, 0, openClockIntent, 0);
         remoteViews.setOnClickPendingIntent(R.id.textClock, clockPendingIntent);
 
-        /*Update widget on everything else click*/
-        Intent intent = new Intent(context, Widget.class);
+        /*Update clock_only_widget on everything else click*/
+        Intent intent = new Intent(context, WeatherWidget.class);
         intent.setAction(AppWidgetManager.ACTION_APPWIDGET_UPDATE);
         intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS, appWidgetIds);
         PendingIntent updatePendingIntent = PendingIntent.getBroadcast(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
@@ -73,7 +73,7 @@ public class Widget extends AppWidgetProvider {
         remoteViews.setOnClickPendingIntent(R.id.low_temperature, updatePendingIntent);
         remoteViews.setOnClickPendingIntent(R.id.high_temperature, updatePendingIntent);
 
-        /*Redrawing and updating widget*/
+        /*Redrawing and updating clock_only_widget*/
         appWidgetManager.updateAppWidget(appWidgetIds[0], remoteViews);
     }
 

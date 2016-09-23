@@ -2,7 +2,7 @@
                     android:minWidth="240dp"
                     android:minHeight="80dp"
                     android:updatePeriodMillis="1800000"
-                    android:initialLayout="@layout/widget"
-                    android:resizeMode="horizontal|vertical"
-                    android:previewImage="@drawable/preview">
+                    android:initialLayout="@layout/weather_widget"
+                    android:resizeMode="none"
+                    android:previewImage="@drawable/preview_weather">
 </appwidget-provider>
