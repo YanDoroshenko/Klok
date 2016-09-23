@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 744.09448819 1052.3622047"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="battery.svg">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.19127791"
+     inkscape:cx="1015.375"
+     inkscape:cy="-359.983"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     showguides="false"
+     inkscape:window-width="1366"
+     inkscape:window-height="719"
+     inkscape:window-x="0"
+     inkscape:window-y="26"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       style="fill:#e6e6e6;fill-opacity:1;fill-rule:evenodd;stroke:#ffffff;stroke-width:0.93228px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 510.35201,-76.232427 c -11.08,0 -20,8.92 -20,20 l 0,22.82226 -27.17773,0 c -27.70001,0 -50.00001,22.3 -50.00001,50 l 0,325.816407 c 0,27.7 22.3,50 50.00001,50 l 202.92578,0 c 27.7,0 50,-22.3 50,-50 l 0,-325.816407 c 0,-27.7 -22.3,-50 -50,-50 l -27.17774,0 0,-22.82226 c 0,-11.08 -8.92,-20 -20,-20 l -108.57031,0 z m -44.96094,56.00781 198.51172,0 c 22.16,0 40,17.8400002 40,40 l 0,319.291017 c 0,1.16125 -0.0602,2.30777 -0.15625,3.44335 l -278.08789,0 c -0.0375,0 -0.0739,3e-5 -0.11133,0 -0.096,-1.13558 -0.15625,-2.2821 -0.15625,-3.44335 l 0,-319.291017 c 0,-22.1599998 17.84,-40 40,-40 z"
+       id="rect3336"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/yan/klokdraw/battery10.png"
+       inkscape:export-xdpi="91"
+       inkscape:export-ydpi="91" />
+    <path
+       style="fill:#e6e6e6;fill-opacity:1;fill-rule:evenodd;stroke:#ffffff;stroke-width:0.93228px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 199.14444,978.73611 c -11.08,0 -20,8.92 -20,20 l 0,22.82229 -27.17773,0 c -27.7,0 -50,22.3 -50,50 l 0,325.8164 c 0,27.7 22.3,50 50,50 l 202.92578,0 c 27.7,0 50.00006,-22.3 50.00006,-50 l 0,-325.8164 c 0,-27.7 -22.30006,-50 -50.00006,-50 l -27.17773,0 0,-22.82229 c 0,-11.08 -8.92,-20 -20,-20 l -108.57032,0 z m -44.96093,56.00779 198.51171,0 c 22.16,0 40.00001,17.84 40,40 l 0,125.7871 -277.8164,0 c -0.23319,0 -0.46339,-0.015 -0.69531,-0.022 l 0,-125.7656 c 0,-22.16 17.84,-40 40,-40 z"
+       id="rect3336-3"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/yan/klokdraw/battery60.png"
+       inkscape:export-xdpi="91"
+       inkscape:export-ydpi="91" />
+    <path
+       style="fill:#ff0000;fill-opacity:1;fill-rule:evenodd;stroke:#ffffff;stroke-width:0.93228px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 181.01809,-51.170027 c -11.08,0 -20,8.92 -20,20 l 0,22.8222646 -27.17773,0 c -27.7,0 -50.000002,22.3000004 -50.000002,50.0000004 l 0,325.816402 c 0,27.7 22.300002,50 50.000002,50 l 202.92578,0 c 27.7,0 50,-22.3 50,-50 l 0,-325.816402 c 0,-27.7 -22.3,-50.0000004 -50,-50.0000004 l -27.17773,0 0,-22.8222646 c 0,-11.08 -8.92,-20 -20,-20 l -108.57032,0 z m -44.96093,56.0078118 198.51171,0 c 22.16001,0 40.00001,17.8399992 40,40.0000002 l 0,319.291015 c 0,8.12182 -2.40403,15.65752 -6.53124,21.95312 l -265.44922,0 c -4.127211,-6.2956 -6.531255,-13.8313 -6.531255,-21.95312 l 0,-319.291015 c 0,-22.160001 17.840005,-40.0000002 40.000005,-40.0000002 z"
+       id="rect3336-5"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/yan/klokdraw/battery5.png"
+       inkscape:export-xdpi="91"
+       inkscape:export-ydpi="91" />
+    <path
+       style="fill:#e6e6e6;fill-opacity:1;fill-rule:evenodd;stroke:#ffffff;stroke-width:0.93228px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 185.24552,1508.4906 c -11.08,0 -20,8.92 -20,20 l 0,22.8223 -27.17773,0 c -27.7,0 -49.999995,22.3 -49.999995,50 l 0,325.8163 c 0,27.7 22.299995,50 49.999995,50 l 202.92578,0 c 27.7,0 50,-22.3 50,-50 l 0,-325.8163 c 0,-27.7 -22.3,-50 -50,-50 l -27.17773,0 0,-22.8223 c 0,-11.08 -8.92,-20 -20,-20 l -108.57032,0 z m -44.96093,56.0078 198.51171,0 c 22.16,0 40,17.84 40,40 l 0,9.6445 -278.51171,0 0,-9.6445 c 0,-22.16 17.84,-40 40,-40 z"
+       id="rect3336-35"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/yan/klokdraw/battery90.png"
+       inkscape:export-xdpi="91"
+       inkscape:export-ydpi="91" />
+    <path
+       style="fill:#e6e6e6;fill-opacity:1;fill-rule:evenodd;stroke:#ffffff;stroke-width:0.93228px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -127.75448,1502.4906 c -11.08,0 -20,8.92 -20,20 l 0,22.8223 -27.17773,0 c -27.7,0 -50,22.3 -50,50 l 0,325.8163 c 0,27.7 22.3,50 50,50 l 202.925785,0 c 27.7,0 50,-22.3 50,-50 l 0,-325.8163 c 0,-27.7 -22.3,-50 -50,-50 l -27.17773022,0 0,-22.8223 c 0,-11.08 -8.91999998,-20 -19.99999978,-20 l -108.570325,0 z m -44.96093,56.0078 198.511715,0 c 22.16001,0 40,17.84 40,40 l 0,43.832 -278.511715,0 0,-43.832 c 0,-22.16 17.84,-40 40,-40 z"
+       id="rect3336-62"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/yan/klokdraw/battery80.png"
+       inkscape:export-xdpi="91"
+       inkscape:export-ydpi="91" />
+    <path
+       style="fill:#e6e6e6;fill-opacity:1;fill-rule:evenodd;stroke:#ffffff;stroke-width:0.93228px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -120.85556,976.73611 c -11.08,0 -20,8.92 -20,20 l 0,22.82229 -27.17773,0 c -27.7,0 -50,22.3 -50,50 l 0,325.8164 c 0,27.6999 22.3,50 50,50 l 202.925781,0 c 27.7,0 50,-22.3001 50,-50 l 0,-325.8164 c 0,-27.7 -22.3,-50 -50,-50 l -27.1777296,0 0,-22.82229 c 0,-11.08 -8.92,-20 -20.0000004,-20 l -108.570321,0 z m -44.96093,56.00779 198.511711,0 c 22.16,0 40,17.84 40,40 l 0,168.0762 -278.511711,0 0,-168.0762 c 0,-22.16 17.84,-40 40,-40 z"
+       id="rect3336-9"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/yan/klokdraw/battery50.png"
+       inkscape:export-xdpi="91"
+       inkscape:export-ydpi="91" />
+    <path
+       style="fill:#e6e6e6;fill-opacity:1;fill-rule:evenodd;stroke:#ffffff;stroke-width:0.93228px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 189.35747,451.9816 c -11.08,0 -20,8.92 -20,20 l 0,22.82226 -27.1778,0 c -27.7,0 -50.000004,22.3 -50.000004,50 l 0,325.81641 c 0,27.7 22.300004,50 50.000004,50 l 202.9258,0 c 27.7,0 50,-22.3 50,-50 l 0,-325.81641 c 0,-27.7 -22.3,-50 -50,-50 l -27.1777,0 0,-22.82226 c 0,-11.08 -8.92,-20 -20,-20 l -108.5703,0 z m -44.961,56.00781 198.5118,0 c 22.16,0 39.9999,17.84 39.9999,40 l 0,243.01953 -277.8359,0 c -0.2276,0 -0.4493,-0.0144 -0.6758,-0.0176 l 0,-243.00195 c 0,-22.16 17.84,-40 40,-40 z"
+       id="rect3336-1"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/yan/klokdraw/battery30.png"
+       inkscape:export-xdpi="91"
+       inkscape:export-ydpi="91" />
+    <path
+       style="fill:#e6e6e6;fill-opacity:1;fill-rule:evenodd;stroke:#ffffff;stroke-width:0.93228px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -119.24993,452.28433 c -11.08,0 -20,8.92 -20,20 l 0,22.82227 -27.17778,0 c -27.7,0 -50,22.3 -50,50 l 0,325.81641 c 0,27.69999 22.3,50 50,50 l 202.925776,0 c 27.7,0 50,-22.3 50,-50 l 0,-325.81641 c 0,-27.7 -22.3,-50 -50,-50 l -27.1776995,0 0,-22.82227 c 0,-11.08 -8.92000002,-20 -20.0000005,-20 l -108.570296,0 z m -44.96099,56.00781 198.511686,0 c 22.16,0 40,17.84001 40,40 l 0,286.06251 -278.511686,0 0,-286.06251 c 0,-22.15999 17.84,-40 40,-40 z"
+       id="rect3336-2"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/yan/klokdraw/battery20.png"
+       inkscape:export-xdpi="91"
+       inkscape:export-ydpi="91" />
+    <path
+       style="fill:#e6e6e6;fill-opacity:1;fill-rule:evenodd;stroke:#ffffff;stroke-width:0.93228px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 515.24552,1516.4906 c -11.08,0 -20,8.92 -20,20 l 0,22.8223 -27.17773,0 c -27.7,0 -50,22.3 -50,50 l 0,325.8163 c 0,27.7 22.3,50 50,50 l 202.92578,0 c 27.7,0 50,-22.3 50,-50 l 0,-325.8163 c 0,-27.7 -22.3,-50 -50,-50 l -27.17773,0 0,-22.8223 c 0,-11.08 -8.92,-20 -20,-20 l -108.57032,0 z"
+       id="rect3336-3-7"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/yan/klokdraw/battery100.png"
+       inkscape:export-xdpi="91"
+       inkscape:export-ydpi="91" />
+    <path
+       style="fill:#e6e6e6;fill-opacity:1;fill-rule:evenodd;stroke:#ffffff;stroke-width:0.93228px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 507.35737,448.9816 c -11.08,0 -20,8.92 -20,20 l 0,22.82226 -27.1777,0 c -27.7,0 -50,22.3 -50,50 l 0,325.81641 c 0,27.69996 22.3,50 50,50 l 202.9258,0 c 27.7,0 50,-22.30004 50,-50 l 0,-325.81641 c 0,-27.7 -22.3,-50 -50,-50 l -27.1777,0 0,-22.82226 c 0,-11.08 -8.92,-20 -20,-20 l -108.5704,0 z m -44.9609,56.00781 198.5117,0 c 22.16,0 40,17.84 40,40 l 0,208.18945 -278.5117,0 0,-208.18945 c 0,-22.16 17.84,-40 40,-40 z"
+       id="rect3336-3-0"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/yan/klokdraw/battery40.png"
+       inkscape:export-xdpi="91"
+       inkscape:export-ydpi="91" />
+    <path
+       style="fill:#e6e6e6;fill-opacity:1;fill-rule:evenodd;stroke:#ffffff;stroke-width:0.93228px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 511.14445,976.73611 c -11.08,0 -20,8.92 -20,20 l 0,22.82229 -27.1777,0 c -27.7,0 -50,22.3 -50,50 l 0,325.8164 c 0,27.7 22.3,50 50,50 l 202.9258,0 c 27.7,0 50,-22.3 50,-50 l 0,-325.8164 c 0,-27.7 -22.3,-50 -50,-50 l -27.1777,0 0,-22.82229 c 0,-11.08 -8.92,-20 -20,-20 l -108.5704,0 z m -44.9609,56.00779 198.5117,0 c 22.16,0 40,17.84 40,40 l 0,86.8652 -278.5117,0 0,-86.8652 c 0,-22.16 17.84,-40 40,-40 z"
+       id="rect3336-3-9"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/yan/klokdraw/battery70.png"
+       inkscape:export-xdpi="91"
+       inkscape:export-ydpi="91" />
+    <path
+       style="fill:#ff0000;fill-opacity:1;fill-rule:evenodd;stroke:#ffffff;stroke-width:0.93228px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -145.38812,-51.123402 c -11.08,0 -20,8.92 -20,20 l 0,22.8223004 -27.1777,0 c -27.7,0 -50,22.3000006 -50,49.9999996 l 0,325.816302 c 0,27.7 22.3,50 50,50 l 202.925796,0 c 27.7,0 50,-22.3 50,-50 l 0,-325.816302 c 0,-27.699999 -22.3,-49.9999996 -50,-49.9999996 l -27.1778,0 0,-22.8223004 c 0,-11.08 -8.92,-20 -20,-20 l -108.570296,0 z m -44.9609,56.0078004 198.511696,0 c 22.16,0 40,17.8400006 40,39.9999996 l 0,319.291002 c 0,22.16 -17.84,40 -40,40 l -198.511696,0 c -22.16,0 -40,-17.84 -40,-40 l 0,-319.291002 c 0,-22.159999 17.84,-39.9999996 40,-39.9999996 z"
+       id="rect3336-3-7-0"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/yan/klokdraw/battery0.png"
+       inkscape:export-xdpi="91"
+       inkscape:export-ydpi="91" />
+  </g>
+</svg>

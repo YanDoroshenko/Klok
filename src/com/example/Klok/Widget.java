@@ -78,36 +78,60 @@ public class Widget extends AppWidgetProvider {
     }
 
     private void drawLargeBattery(int level, RemoteViews remoteViews) {
-        if (level < 20)
-            remoteViews.setImageViewResource(R.id.battery_icon, R.drawable.battery00);
-        else if (level >= 20 && level < 40)
+        if (level < 5)
+            remoteViews.setImageViewResource(R.id.battery_icon, R.drawable.battery0);
+        else if (level < 10)
+            remoteViews.setImageViewResource(R.id.battery_icon, R.drawable.battery5);
+        else if (level < 20)
+            remoteViews.setImageViewResource(R.id.battery_icon, R.drawable.battery10);
+        else if (level < 30)
             remoteViews.setImageViewResource(R.id.battery_icon, R.drawable.battery20);
-        else if (level >= 40 && level < 60)
+        else if (level < 40)
+            remoteViews.setImageViewResource(R.id.battery_icon, R.drawable.battery30);
+        else if (level < 50)
             remoteViews.setImageViewResource(R.id.battery_icon, R.drawable.battery40);
-        else if (level >= 60 && level < 80)
+        else if (level < 60)
+            remoteViews.setImageViewResource(R.id.battery_icon, R.drawable.battery50);
+        else if (level < 70)
             remoteViews.setImageViewResource(R.id.battery_icon, R.drawable.battery60);
-        else if (level >= 80 && level < 95)
+        else if (level < 80)
+            remoteViews.setImageViewResource(R.id.battery_icon, R.drawable.battery70);
+        else if (level < 90)
             remoteViews.setImageViewResource(R.id.battery_icon, R.drawable.battery80);
+        else if (level < 95)
+            remoteViews.setImageViewResource(R.id.battery_icon, R.drawable.battery90);
         else
             remoteViews.setImageViewResource(R.id.battery_icon, R.drawable.battery100);
-        remoteViews.setTextViewText(R.id.battery_text, level + "%  ");
+        remoteViews.setTextViewText(R.id.battery_text, " " + level + "%  ");
         remoteViews.setTextViewTextSize(R.id.battery_text, 1, 15.0f);
     }
 
     private void drawSmallBattery(int level, RemoteViews remoteViews) {
-        if (level < 20)
-            remoteViews.setImageViewResource(R.id.battery_icon, R.drawable.battery00_small);
-        else if (level >= 20 && level < 40)
+        if (level < 5)
+            remoteViews.setImageViewResource(R.id.battery_icon, R.drawable.battery0_small);
+        else if (level < 10)
+            remoteViews.setImageViewResource(R.id.battery_icon, R.drawable.battery5_small);
+        else if (level < 20)
+            remoteViews.setImageViewResource(R.id.battery_icon, R.drawable.battery10_small);
+        else if (level < 30)
             remoteViews.setImageViewResource(R.id.battery_icon, R.drawable.battery20_small);
-        else if (level >= 40 && level < 60)
+        else if (level < 40)
+            remoteViews.setImageViewResource(R.id.battery_icon, R.drawable.battery30_small);
+        else if (level < 50)
             remoteViews.setImageViewResource(R.id.battery_icon, R.drawable.battery40_small);
-        else if (level >= 60 && level < 80)
+        else if (level < 60)
+            remoteViews.setImageViewResource(R.id.battery_icon, R.drawable.battery50_small);
+        else if (level < 70)
             remoteViews.setImageViewResource(R.id.battery_icon, R.drawable.battery60_small);
-        else if (level >= 80 && level < 95)
+        else if (level < 80)
+            remoteViews.setImageViewResource(R.id.battery_icon, R.drawable.battery70_small);
+        else if (level < 90)
             remoteViews.setImageViewResource(R.id.battery_icon, R.drawable.battery80_small);
+        else if (level < 95)
+            remoteViews.setImageViewResource(R.id.battery_icon, R.drawable.battery90_small);
         else
             remoteViews.setImageViewResource(R.id.battery_icon, R.drawable.battery100_small);
-        remoteViews.setTextViewText(R.id.battery_text, level + "%  ");
+        remoteViews.setTextViewText(R.id.battery_text, " " + level + "%  ");
         remoteViews.setTextViewTextSize(R.id.battery_text, 1, 12.0f);
     }
 
