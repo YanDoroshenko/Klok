@@ -9,6 +9,7 @@ enum WeatherCondition {
 
     Fair("Fair", R.drawable.fair),
     FairSmoke("Fair, smoke", R.drawable.fairsmoke),
+    Fog("Fog", R.drawable.fog),
     FairDistantLightnings("Fair, distant lightnings", R.drawable.fairdistinctlightnings),
     Brume("Brume", R.drawable.brume),
     PartlyCloudy("Partly cloudy", R.drawable.partlycloudy),
