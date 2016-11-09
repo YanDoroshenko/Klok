@@ -163,7 +163,12 @@ public class WeatherWidget extends AppWidgetProvider {
         remoteViews.setTextColor(R.id.weather_text, Color.LTGRAY);
         remoteViews.setTextViewTextSize(R.id.weather_text, 1, 25.0f);
         remoteViews.setTextColor(R.id.weather_text, Color.LTGRAY);
-        remoteViews.setTextViewText(R.id.sign, " " + (weather.isBelowZero() ? "-" : "+"));
+        if (weather.getTemperature().equals("")) {
+            remoteViews.setTextViewText(R.id.sign, " ");
+            remoteViews.setTextViewText(R.id.weather_text, "0");
+        } else {
+            remoteViews.setTextViewText(R.id.sign, " " + (weather.isBelowZero() ? String.valueOf((char)0x2013) : "+"));
+        }
         remoteViews.setTextViewText(R.id.weather_text, weather.getTemperature());
         remoteViews.setTextViewText(R.id.measurements, weather.getMeasurements());
         remoteViews.setTextViewText(R.id.high_temperature, weather.getHi());

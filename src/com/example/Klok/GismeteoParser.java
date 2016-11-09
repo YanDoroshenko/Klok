@@ -23,7 +23,7 @@ class GismeteoParser implements WeatherParser {
         Document document = connection.get();
         Element temp = document.getElementsByClass("temp").get(0);
         String current_temperature = temp.getElementsByClass("c").text();
-        boolean belowZero = current_temperature.charAt(0) == '-';
+        boolean belowZero = current_temperature.charAt(0) != '0' && current_temperature.charAt(0) != '+';
         current_temperature = current_temperature.substring(1, current_temperature.length() - 2);
         String measurements = temp.getElementsByClass("meas").get(0).text();
         String conditionStr = document.getElementsByClass("cloudness").first().getElementsByTag("td").text();
@@ -37,6 +37,6 @@ class GismeteoParser implements WeatherParser {
 
         WeatherCondition condition = WeatherCondition.condition(conditionStr);
 
-        return new Weather(condition,belowZero,current_temperature, high_temperature, low_temperature, measurements);
+        return new Weather(condition, belowZero, current_temperature, high_temperature, low_temperature, measurements);
     }
 }
