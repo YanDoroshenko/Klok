@@ -25,6 +25,8 @@ class GismeteoParser implements WeatherParser {
         String current_temperature = temp.getElementsByClass("c").text();
         boolean belowZero = current_temperature.charAt(0) != '0' && current_temperature.charAt(0) != '+';
         current_temperature = current_temperature.substring(1, current_temperature.length() - 2);
+        if (current_temperature.isEmpty())
+            current_temperature = "0";
         String measurements = temp.getElementsByClass("meas").get(0).text();
         String conditionStr = document.getElementsByClass("cloudness").first().getElementsByTag("td").text();
 
