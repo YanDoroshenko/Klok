@@ -7,6 +7,7 @@ package com.example.Klok;
  */
 enum WeatherCondition {
 
+    CloudyLightRain("Cloudy, light rain", R.drawable.lightrain),
     Fair("Fair", R.drawable.fair),
     FairBrume("Fair, brume", R.drawable.brume),
     FairSmoke("Fair, smoke", R.drawable.fairsmoke),
